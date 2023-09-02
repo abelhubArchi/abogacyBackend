@@ -1,0 +1,68 @@
+const express = require('express');
+const router = express.Router();
+const admin = require('./../firebase/firebase.js');
+const {Configuration, OpenAIApi} = require('openai')
+//openai Configuracion
+const configuracion = new Configuration({
+  apiKey: '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',
+});
+
+const openai = new OpenAIApi(configuracion);
+
+
+
+
+var db = admin.firestore();
+var FieldValue = admin.firestore.FieldValue;
+
+
+//obtener chat
+router.post('/chat/:id/:caso/documentChat/:funcion', async (req, res) => {
+    var chatDocumentDigital = JSON.parse(req.body.data)
+    //chatDocumentDigital.unshift({'role': 'system', 'content': `Eres Abogacy un consejero judicial especializado en Bolivia creado en El Alto. Explicame el Siguiente documento. Genera un Array con todas la Leyes, Articulos, etc; de el siguiente documento que te dara el usuario:`})
+   switch (req.params.funcion) {
+      case "resumir":
+      chatDocumentDigital.unshift({'role': 'system', 'content':
+       `Eres Abogacy un consejero judicial especializado en Bolivia creado en El Alto. Explicame el Siguiente documento y si hay leyes resaltalas`}) 
+      break;
+      case "IdLeyes":
+      chatDocumentDigital.unshift({'role': 'system', 'content': 
+      `Eres Abogacy un consejero judicial especializado en Bolivia creado en El Alto. Dame un listado de las leyes que me de el siguiente documento: `}) ;
+      break;
+      case "particiClave":
+      chatDocumentDigital.unshift({'role': 'system', 'content': 
+      `Eres Abogacy un consejero judicial especializado en Bolivia creado en El Alto. Resalta los participantes clave del siguiente documento con sus datos si es que estan proporcionados en una lista: `}) 
+      break;
+      case "dectecteinconsis":
+      chatDocumentDigital.unshift({'role': 'system', 'content': 
+      `Eres Abogacy un consejero judicial especializado en Bolivia creado en El Alto. Detecta todas las inconsistencias ejm: cedulas de identidad falsas u nombres diferentes u hechos con incuenrencias del siguiente documento:`}) 
+      break;
+      case "puntosClav":
+      chatDocumentDigital.unshift({'role': 'system', 'content': 
+      `Eres Abogacy un consejero judicial especializado en Bolivia creado en El Alto. Dame en una lista los puntos clave, importantes y a resaltar en una lista de el siguiente documento: `}) 
+      break;
+
+      default:
+      break;
+   }
+      
+  
+    const completion = await openai.createChatCompletion({
+        model: "gpt-3.5-turbo",
+       // max_tokens: 10,
+        messages: chatDocumentDigital,
+      })
+    //y subimos a el chat a la  base de datos
+    chatDocumentDigital.push(completion.data.choices[0].message)
+    await db.collection('usuarios').doc(req.params.id).collection('casos').doc(req.params.caso).set({data: chatDocumentDigital})
+    //enviamos lo ultimo que dijo la IA
+    res.json(completion.data.choices[0].message)
+    console.log(completion.data.choices[0].message); 
+}); 
+
+
+
+
+
+module.exports = router;
+

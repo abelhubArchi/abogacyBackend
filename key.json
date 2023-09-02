@@ -1,0 +1,13 @@
+{
+    "type": "service_account",
+    "project_id": "rich-mountain-391617",
+    "private_key_id": "3656b6ea7c13dbd9b0c41f12fa18a87d31c0a70b",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC5mK9In2VgJaV7\nfywwisUmWr0lcJeO1FqCIp9kBfUQraiA6f0cGjBgToBB6PBuOeiCeI1X1XGeBQ9K\nRs3H+BzMMfPDXEwb+LhyvxR3XmzCvPG8PgoA4/Xhhc+GXvLDK2LuszgJAzGC+KX2\nT5ZJQVOwOUmDLmTTHN2TWb3V2zZWtJs6/KcuXL74wxMH+6hmgfv6g2lS+wH/DzAD\nzLZFK3X4C/fnq43HAC7lznG2O72VLzUJBwPrz62A4IW13KzntT3vPud+HBSMUjmV\nuVZa5uatDwYngWslcgHxc8l1lGRiZZAi7Q6/vZlRX6ZhlwYsM/P8uaK7Cgw2OWR7\nPWn7lQsJAgMBAAECggEAAUNvfPdWrmVoiz7xC6sECNNW5+MkD6WmKBShlwHJxlsG\nJY/YnLeP2yTHQryq8P/RQE/8+YgYCehpCwkzBWrM1lGumYaoHwvTM3srHZCklwdQ\npW0BW1x2LJIL0orhUx3/sVhKtvYO3uSS9j/i2PO/j23yRaGJ4vgnmfyneRtZcxST\nF9qVXycyVJ3pZSGDCf+oWcjxlKJmZtKRMexiISaByfJeGPguw6ZqtU6OWqH/FMzu\ndoje3HMQWrhV3++RHcA9omjGLOu6ZJCTzFPGBz5M7HAZotyGnxvWZaRmVm89o21G\n0oku8+esS6g1tJNQilVmopSmiSllKeh8SckPtbRCcQKBgQDj9h9odYggpufAgNoV\nErBpkUIdbliEvpCbxMTtVsMtBT7RYsBFPTlSsR7l6l+BiViN77UvOyAgFQdIuLtJ\nbya9qwgMMdxukBzifpZVnT007hzMWYf5b/a3oZnRUQ6Tt8Jh8DgLQbiZQuGh54Ir\nu19oMBACX8svYRIejr4okjsO8wKBgQDQbJrlljpxSU0847j3YFlUEedhLN7fZn/L\nDSinTiNFKyzqJrp4YD49EnL+B/LQ28iJ32bpWvY+qgmOi4dOq1hhD2sBpqlRqC4X\n1W53b29MaA5qS5YMns0OZc+6iHTJx7iwhkB6OODtAfX3ob1zlao3WANrcXkNbuin\nAvtCu2MVEwKBgDg4hCh8DBWZdECaxq45zL5Mb9TYWQZsBTgVgEfUhRA+Ye67/xVU\ncyW8vxUPB3zoBaoDu1ipqVOgPAqoXLBQtGpEmxh+15GBA06sz6DPxb+fFgUj85AG\nF//T4B6qcgDmag9Dcl78V22c/A61DPqCHJaSe/BJ9c96jkBxDd7tqZkXAoGAf1pt\nR24FJeXBYTxQcC+aRalu9UzCnkT2Py86MQiouoIIPscNV7KPNSgJxbk7oG07Wyt7\nqYkgP+gMUOJm+iXuqdgO7YJVoYSfLYcHqckYe9p1PHQVKn76ExsY1AS/P/BepNZT\nnZsVrRxunDJjHbZMvOZ1qHg8nH2xgSNsPjlb8KsCgYEAzsyt/qsnEOPSPNRpFc2F\nbqiAsn9S2y8Qk6N1N/43PYACSxP1XBGCYO9Psp2x7dGsDKQqgoWwtdjsp+y1zZk5\nfA1BjiBdMEn5OAnlByJL7akf+sXXELB+KrAzqzmiyT48HmKene5HcFgZ/hAXkj0c\nXPwcjMbHIfVMYRhgoAb9x1g=\n-----END PRIVATE KEY-----\n",
+    "client_email": "abogacyvisioncloud@rich-mountain-391617.iam.gserviceaccount.com",
+    "client_id": "100246927114600696844",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/abogacyvisioncloud%40rich-mountain-391617.iam.gserviceaccount.com",
+    "universe_domain": "googleapis.com"
+  }
