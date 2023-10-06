@@ -35,7 +35,16 @@ router.get('/chat/:id/:caso', async (req, res) => {
     //convertimops a objetos json
     var datajson = JSON.parse(req.body.data);
     //lo subimos a gpt
-  
+    const completion = await openai.createChatCompletion({
+      model: "gpt-3.5-turbo",
+      max_tokens: 50,
+      messages: datajson,
+    })
+    //hacemos un push de la respuesta a datajson  
+    datajson.push(completion.data.choices[0].message)
+    //imprimimos el ultimos dato
+    console.log(datajson);
+    //y subimos a el chat a la  base de datos
     await db.collection('usuarios').doc(req.params.id).collection('casos').doc(req.params.caso).set({data: datajson})
 
     //enviamos lo ultimo que dijo la IA
