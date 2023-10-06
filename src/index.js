@@ -26,7 +26,7 @@ app.use(multer({
 const cors = require('cors');
 const { log } = require('console');
 var corsOptions = {
-  origin: "http://192.168.0.17:5173",
+  origin: "http://192.168.0.18:5173",
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 app.use(cors(corsOptions));
@@ -41,6 +41,7 @@ app.use(require('./routes/index.js'));
 app.use(require('./routes/chat.js'));
 app.use(require('./routes/casos.js'))
 app.use(require('./routes/documentsDigitalChat.js'))
+app.use(require('./routes/procesos.js'))
 console.log(console.log(process.env.GOOGLE_APPLICATION_CREDENTIALS));
 // listening the Server
 app.listen(app.get('port'), () => {

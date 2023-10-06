@@ -4,7 +4,7 @@ const admin = require('./../firebase/firebase.js');
 const {Configuration, OpenAIApi} = require('openai')
 //openai Configuracion
 const configuracion = new Configuration({
-  apiKey: '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',
+  apiKey: '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',
 });
 
 const openai = new OpenAIApi(configuracion);
@@ -37,7 +37,7 @@ router.get('/chat/:id/:caso', async (req, res) => {
     //lo subimos a gpt
     const completion = await openai.createChatCompletion({
       model: "gpt-3.5-turbo",
-      //max_tokens: 10,
+      max_tokens: 50,
       messages: datajson,
     })
     //hacemos un push de la respuesta a datajson  
