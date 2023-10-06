@@ -9,7 +9,7 @@ const client = new vision.ImageAnnotatorClient({credentials});
 var db = admin.firestore();
 
 router.get('/', (req, res) => { 
-    res.send('hola')
+    res.send('hola Johan esta es nuestra inversion, y esta en internet... Psdt: Eres un gay')
   });
 
 
