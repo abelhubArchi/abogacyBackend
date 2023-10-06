@@ -30,7 +30,14 @@ router.get('/chat/:id/:caso', async (req, res) => {
 
 //Guardar mensaje recibido
   router.post('/chat/:id/:caso/enviar', async (req, res) => {
-   
+    //imprimimos el valor del fronted
+    console.log(req.body.data);
+    //convertimops a objetos json
+    var datajson = JSON.parse(req.body.data);
+    //lo subimos a gpt
+  
+    await db.collection('usuarios').doc(req.params.id).collection('casos').doc(req.params.caso).set({data: datajson})
+
     //enviamos lo ultimo que dijo la IA
     res.json(completion.data.choices[0].message)
   });
