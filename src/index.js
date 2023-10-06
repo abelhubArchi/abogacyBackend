@@ -26,7 +26,8 @@ app.use(multer({
 const cors = require('cors');
 const { log } = require('console');
 var corsOptions = {
-  origin: ["https://abogacyio.netlify.app", "http://192.168.0.18:5173"],
+  //origin: ["https://abogacyio.netlify.app", "http://192.168.0.18:5173"],
+  origin: '*',
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 app.use(cors(corsOptions));
