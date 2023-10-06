@@ -49,7 +49,6 @@ router.get('/chat/:id/:caso', async (req, res) => {
 
     //enviamos lo ultimo que dijo la IA
     res.json(completion.data.choices[0].message)
-    res.send('listo', 200)
   });
 
 
