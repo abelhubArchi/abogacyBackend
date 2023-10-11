@@ -3,8 +3,11 @@ const router = express.Router();
 const admin = require('./../firebase/firebase.js');
 const {Configuration, OpenAIApi} = require('openai')
 //openai Configuracion
+// Importa la librería dotenv
+require('dotenv').config();
+
 const configuracion = new Configuration({
-  apiKey: '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',
+  apiKey: process.env.OPENAI_API_KEY,
 });
 
 const openai = new OpenAIApi(configuracion);
