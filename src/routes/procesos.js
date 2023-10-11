@@ -4,7 +4,7 @@ const admin = require('./../firebase/firebase.js');
 const {Configuration, OpenAIApi} = require('openai')
 //openai Configuracion
 const configuracion = new Configuration({
-  apiKey: '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',
+  apiKey: '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',
 });
 
 const openai = new OpenAIApi(configuracion);
