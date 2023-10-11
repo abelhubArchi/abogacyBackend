@@ -26,7 +26,7 @@ app.use(multer({
 const cors = require('cors');
 const { log } = require('console');
 var corsOptions = {
-  origin: "https://abogacyio.netlify.app",
+  origin: ["https://abogacyio.netlify.app", "http://192.168.0.18:5173"],
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 app.use(cors(corsOptions));
@@ -38,13 +38,6 @@ app.set('port', process.env.PORT || 3000);
 log(process.env.PORT || 3000)
 
 // routes
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', 'https://abogacyio.netlify.app');
-  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-  res.header('Access-Control-Allow-Credentials', true);
-  next();
-});
 
 app.use(require('./routes/index.js'));
 app.use(require('./routes/chat.js'));
