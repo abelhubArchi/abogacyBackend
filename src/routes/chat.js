@@ -40,7 +40,7 @@ router.get('/chat/:id/:caso', async (req, res) => {
     //lo subimos a gpt
     const completion = await openai.createChatCompletion({
       model: "gpt-3.5-turbo",
-      max_tokens: 50,
+      //max_tokens: 50,
       messages: datajson,
     })
     //hacemos un push de la respuesta a datajson  

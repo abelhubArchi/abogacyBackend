@@ -24,11 +24,11 @@ router.post('/chat/:id/:caso/procesos/:funcion', async (req, res) => {
     var chatDocumentDigital = JSON.parse(req.body.data)
     //chatDocumentDigital.unshift({'role': 'system', 'content': `Eres Abogacy un consejero judicial especializado en Bolivia creado en El Alto. Explicame el Siguiente documento. Genera un Array con todas la Leyes, Articulos, etc; de el siguiente documento que te dara el usuario:`})
       chatDocumentDigital.unshift({'role': 'system', 'content':
-       `Eres Abogacy un consejero judicial especializado en Bolivia creado en El Alto`})
+       `Eres Abogacy un consejero judicial especializado en Bolivia creado en El Alto con el siguiente mensaje que te enviara responderas todas las preguntas y me daras un resumen primeramente`})
 
     const completion = await openai.createChatCompletion({
         model: "gpt-3.5-turbo",
-        max_tokens: 10,
+        //max_tokens: 10,
         messages: chatDocumentDigital,
       })
     //y subimos a el chat a la  base de datos

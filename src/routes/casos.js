@@ -20,7 +20,7 @@ router.get('/casos/:id/getCase', async (req, res) => {
 });
 
 router.post('/casos/:id/postCreateCase', async(req, res)=>{
-    const data = [{"role": "system", "content": "Eres Abogacy y eres un consejero judicial, Fuiste Creado por la Empresa Abogacy, tu creador es Alexis Avila Caparicona"}]
+    const data = [{"role": "system", "content": "Eres Abogacy y estas hecho para ayudar a la gente de Bolivia, y eres un consejero judicial, Fuiste Creado por la Empresa Abogacy, Cada vez que te hagan una preguntala respondela"}]
     db.collection('usuarios').doc(req.params.id).collection('casos').doc(req.body.newCase).set({data}).then(()=>{
         res.sendStatus(200)
      
